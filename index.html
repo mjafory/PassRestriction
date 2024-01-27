@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>replit</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<form action="" method="POST" class="form">
+		<label>Name</label>
+		<input type="text" name="name">
+		<br>
+		<label>Email</label>
+		<input type="email" id='restriction'>
+		<br>
+		<label>Subject</label>
+		<input type="text" name="subject" value="Password reset request">
+		<br>
+		<label>Message</label>
+		<textarea placeholder="Type your messages" name="message"></textarea>
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		document.getElementById('restriction').addEventListener('keyup', function() {
+			let restriction_text = document.getElementById('restriction').value;
+			if (restriction_text.search('workemail') !== -1) {
+				alert('Work email is not allowed! Please use your personal email for the password reset process');
+			}
+			if (restriction_text.search('WORKEMAIL') !== -1) {
+				alert('Work email is not allowed! Please use your personal email for the password reset process');
+			}
+			restriction_text = restriction_text.replace(/workemail/g, '');
+			restriction_text = restriction_text.replace(/WORKEMAIL/g, '');
+			document.getElementById('restriction').value = restriction_text;
+		}, false);
+
+	</script>
+
+</body>
+
+</html>
