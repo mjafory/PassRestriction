@@ -4,28 +4,31 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>replit</title>
+	<title>Email Restriction</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-	<form action="" method="POST" class="form">
-		<label>Name</label>
-		<input type="text" name="name">
-		<br>
-		<label>Email</label>
-		<input type="email" id='restriction'>
-		<br>
-		<label>Subject</label>
-		<input type="text" name="subject" value="Password reset request">
-		<br>
-		<label>Message</label>
-		<textarea placeholder="Type your messages" name="message"></textarea>
-		<br><br>
-		<input type="submit" value="Submit">
-	</form>
+	<h1>Email Restriction for Password Reset Requests</h1>
 
+	<div class="box">
+		<form action="" method="POST" class="form">
+			<label>Name</label>
+			<input type="text" name="name">
+			<br>
+			<label>Email</label>
+			<input type="email" id='restriction'>
+			<br>
+			<label>Subject</label>
+			<input type="text" name="subject" value="Password reset request">
+			<br>
+			<label>Message</label>
+			<textarea placeholder="Type your messages" name="message"></textarea>
+			<br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
 	<script>
 		document.getElementById('restriction').addEventListener('keyup', function() {
 			let restriction_text = document.getElementById('restriction').value;
